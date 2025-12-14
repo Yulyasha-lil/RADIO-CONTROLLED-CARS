@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>RADIO-CONTROLLED CARS</title>
+    <meta name="description" content="Агрегатор мероприятий по радиоуправляемым машинкам. Расписание гонок RC cars, соревнования дронов и RC-событий в Санкт-Петербурге.">
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <link rel="stylesheet" href="./styles/variable.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <meta property="og:title" content="RADIO-CONTROLLED CARS" />
+    <meta property="og:description" content="Все соревнования по радиоуправляемым машинкам в одном месте. Найди свои заезды: треки, дроны, RC-события рядом.">
+    <meta property="og:image" content="./images/mini_car.jpg">
+    <meta property="og:url" content="http://127.0.0.1:5500/#contact" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RADIO-CONTROLLED CARS" />
+    <meta name="twitter:description" content="Агрегатор мероприятий по радиоуправляемым машинкам. Расписание гонок RC cars, соревнования дронов и RC-событий в Санкт-Петербурге." />
+    <meta name="twitter:image" content="/images/mini_car.jpg" />
+
+    <link rel="icon" href="svg/contacts_car.svg" type="image/svg" />
+    <link rel="apple-touch-icon" href="./images/mini_car.jpg" />
+  </head>
+  <body class="page">
+    <header class="header">
+      <div>
+        <a class="header__logo" href="/">RADIO-CONTROLLED CARS</a>
+      </div>
+      <nav class="navigation">
+        <ul class="header__menu-list">
+          <li><a class="header__menu-list-item" href="#home">главная</a></li>
+          <li><a class="header__menu-list-item" href="#events">мероприятия</a></li>
+          <li><a class="header__menu-list-item" href="#about">о нас</a></li>
+          <li><a class="header__menu-list-item" href="#contact">контакты</a></li>  
+        </ul>
+      </nav>
+    </header>
+    <main class="main" id="home">
+      <section class="cover">
+        <h1 class="cover__title">
+          <span class="aligned-text">RADIO-CONTROLLED</span>
+          <span class="aligned-text">CARS</span>
+        </h1>
+      </section>
+      <section class="about" id="about">
+        <div class="text">
+          <h2 class="title">О нас</h2>
+          <div class="paragraphs">
+            <p>
+              Наш сайт - удобный агрегатор расписаний соревнований по радиоуправляемой технике. 
+            </p>
+            <p>
+              С помощью нас вы легко найдёте, когда и где пройдут заезды, трековые гонки, дрон-соревнования и другие мероприятия.
+            </p>
+          </div>
+        </div>
+        <img 
+          class="about__image" 
+          src="./images/about_image.jpg"
+          alt="Игрушечные машинки на радиоуправлении"
+          loading="lazy"
+          >
+      </section>
+      <section class="events" id="events">
+        <h2 class="title">Мероприятия</h2>
+        <ul class="events__card-list" id="events-list">
+          <li class="event__card-item">
+            <img 
+              class="card__image" 
+              src="./images/two_cars.jpg" 
+              alt="Две радиуправляемые машинки"
+              loading="lazy"
+            >
+            <div class="event__card-content">
+              <p class="paragraphs event__card-title">Аляска куртка мы выглядит так круто</p>
+            </div>
+            <button 
+              class="event__button" 
+              type="button" 
+              data-action="open-modal"
+              aria-label="Подробнее о мероприятии">
+              <span>Подробнее</span>
+            </button>
+            <dialog class="popup">
+                <div class="paragraphs">
+                    <span>Дата и время: 20 декабря, 18:00</span>
+                    <span>Место проведения: Выставочный центр</span>
+                    <span>Описание: Краткое описание события в 2–3 предложения. Укажите, что будет происходить, для кого подходит мероприятие и почему оно интересно.</span>
+                </div>
+                <form method="dialog" class="form">
+                    <button 
+                      class="event__button" 
+                      type="submit" 
+                      aria-label="Скрыть подробности мероприятия">
+                      <span class="button__text">Скрыть</span>
+                    </button>
+                </form>
+            </dialog>
+          </li>
+          <li class="event__card-item">
+            <img 
+              class="card__image" 
+              src="./images/pink_car.jpg" 
+              alt="Машинка белая"
+              loading="lazy"
+            >
+            <div class="event__card-content">
+              <p class="paragraphs event__card-title">Аляска куртка мы выглядит так круто</p>
+            </div>
+            <button 
+              class="event__button" 
+              type="button" 
+              data-action="open-modal"
+              aria-label="Подробнее о мероприятии">
+              <span>Подробнее</span>
+            </button>
+            <dialog class="popup">
+                <div class="paragraphs">
+                    <span>Дата и время: 20 декабря, 18:00</span>
+                    <span>Место проведения: Выставочный центр</span>
+                    <span>Описание: Краткое описание события в 2–3 предложения. Укажите, что будет происходить, для кого подходит мероприятие и почему оно интересно.</span>
+                </div>
+                <form method="dialog" class="form">
+                    <button 
+                      class="event__button" 
+                      type="submit" 
+                      aria-label="Скрыть подробности мероприятия">
+                      <span class="button__text">Скрыть</span>
+                    </button>
+                </form>
+            </dialog>
+          </li>
+          <li class="event__card-item">
+            <img 
+              class="card__image" 
+              src="./images/mini_car.jpg"
+              alt="Игрушечная синяя машинка на фоне обычной"
+              loading="lazy"
+            >
+            <div class="event__card-content">
+              <p class="paragraphs event__card-title">Аляска куртка мы выглядит так круто</p>
+            </div>
+            <button 
+              class="event__button" 
+              type="button" 
+              data-action="open-modal"
+              aria-label="Подробнее о мероприятии">
+              <span>Подробнее</span>
+            </button>
+            <dialog class="popup">
+                <div class="paragraphs">
+                    <span>Дата и время: 20 декабря, 18:00</span>
+                    <span>Место проведения: Выставочный центр</span>
+                    <span>Описание: Краткое описание события в 2–3 предложения. Укажите, что будет происходить, для кого подходит мероприятие и почему оно интересно.</span>
+                </div>
+                <form method="dialog" class="form">
+                    <button 
+                      class="event__button" 
+                      type="submit" 
+                      aria-label="Скрыть подробности мероприятия">
+                      <span class="button__text">Скрыть</span>
+                    </button>
+                </form>
+            </dialog>
+          </li>
+          <li class="event__card-item">
+            <img 
+              class="card__image" 
+              src="./images/red_car.jpg" 
+              alt="Игрушечная красная машинка"
+              loading="lazy"
+            >
+            <div class="event__card-content">
+              <p class="paragraphs event__card-title">Аляска куртка мы выглядит так круто</p>
+            </div>
+            <button 
+              class="event__button" 
+              type="button" 
+              data-action="open-modal"
+              aria-label="Подробнее о мероприятии">
+              <span>Подробнее</span>
+            </button>
+            <dialog class="popup">
+                <div class="paragraphs">
+                    <span>Дата и время: 20 декабря, 18:00</span>
+                    <span>Место проведения: Выставочный центр</span>
+                    <span>Описание: Краткое описание события в 2–3 предложения. Укажите, что будет происходить, для кого подходит мероприятие и почему оно интересно.</span>
+                </div>
+                <form method="dialog" class="form">
+                    <button 
+                      class="event__button" 
+                      type="submit" 
+                      aria-label="Скрыть подробности мероприятия">
+                      <span class="button__text">Скрыть</span>
+                    </button>
+                </form>
+            </dialog>
+          </li>
+          <li class="event__card-item">
+            <img 
+              class="card__image" 
+              src="./images/darkened_car.jpg" 
+              alt="Игрушечная машинка в темноте"
+              loading="lazy"
+            >
+            <div class="event__card-content">
+              <p class="paragraphs event__card-title">Аляска куртка мы выглядит так круто</p>
+            </div>
+            <button 
+              class="event__button" 
+              type="button" 
+              data-action="open-modal"
+              aria-label="Подробнее о мероприятии">
+              <span>Подробнее</span>
+            </button>
+            <dialog class="popup">
+                <div class="paragraphs">
+                    <span>Дата и время: 20 декабря, 18:00</span>
+                    <span>Место проведения: Выставочный центр</span>
+                    <span>Описание: Краткое описание события в 2–3 предложения. Укажите, что будет происходить, для кого подходит мероприятие и почему оно интересно.</span>
+                </div>
+                <form method="dialog" class="form">
+                    <button 
+                      class="event__button" 
+                      type="submit" 
+                      aria-label="Скрыть подробности мероприятия">
+                      <span class="button__text">Скрыть</span>
+                    </button>
+                </form>
+            </dialog>
+          </li>
+          <li class="event__card-item">
+            <img 
+              class="card__image" 
+              src="./images/black_car.jpg" 
+              alt="Фото бампера игрушечной машинки"
+              loading="lazy"
+            >
+            <div class="event__card-content">
+              <p class="paragraphs event__card-title">Аляска куртка мы выглядит так круто</p>
+            </div>
+            <button 
+              class="event__button" 
+              type="button" 
+              data-action="open-modal"
+              aria-label="Подробнее о мероприятии">
+              <span>Подробнее</span>
+            </button>
+            <dialog class="popup">
+                <div class="paragraphs">
+                    <span>Дата и время: 20 декабря, 18:00</span>
+                    <span>Место проведения: Выставочный центр</span>
+                    <span>Описание: Краткое описание события в 2–3 предложения. Укажите, что будет происходить, для кого подходит мероприятие и почему оно интересно.</span>
+                </div>
+                <form method="dialog" class="form">
+                    <button 
+                      class="event__button" 
+                      type="submit" 
+                      aria-label="Скрыть подробности мероприятия">
+                      <span class="button__text">Скрыть</span>
+                    </button>
+                </form>
+            </dialog>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer" id="contact">
+      <h2 class="title footer__title">Контактная информация</h2>
+      <div class="contacts__info">
+        <h3 class="contacts__subtitle">Контакты</h3>
+        <address class="contacts__address">
+          <span>г. Санкт-Петербург</span>
+          <span><a href="mailto:info@mail.ru">E-mail: info@mail.ru</a></span>
+        </address>
+      </div>
+      <div class="footer__copyright">
+        <p>© 2025 RADIO-CONTROLLED CARS. Все права защищены.</p>
+      </div>
+    </footer>
+    <script src="./scripts/modal.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Wulkan Display';
+  src: 
+  url(./WulkanDisplayBold.ttf) format('ttf'),
+  url(./WulkanDisplayBold.woff) format('woff'),
+  url(./WulkanDisplayBold.woff2) format('woff2');
+  font-style: bold;
+  font-display: swap;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Commissioner';
+  src: 
+  url(./Commissioner-Medium.ttf) format('ttf'),
+  url(./Commissioner-Medium.woff) format('woff'),
+  url(./Commissioner-Medium.woff2) format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chocolate Classical Sans';
+  src: 
+  url(./Commissioner-Medium.ttf) format('ttf'),
+  url(./Commissioner-Medium.woff) format('woff'),
+  url(./Commissioner-Medium.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
