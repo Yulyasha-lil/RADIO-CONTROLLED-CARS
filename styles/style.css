@@ -1,4 +1,4 @@
-html {
+﻿html {
   scroll-behavior: smooth;
 }
 
@@ -309,4 +309,233 @@ html {
     margin-top: -222px; /* компенсируем отступ */
     padding-top: 222px; /* принудительный отступ */
   }
+}
+
+/* Стили для фильтров */
+.events__controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.filter__button {
+    padding: 8px 16px;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    color: var(--text-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.filter__button:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+.filter__button.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Карточки мероприятий */
+.card__image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+}
+
+.card__category {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.event__card-content {
+    padding: 15px;
+}
+
+.event__card-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.event__card-date,
+.event__card-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 5px;
+}
+
+.event__card-date svg,
+.event__card-location svg {
+    flex-shrink: 0;
+}
+
+/* Модальное окно */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: white;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal__content {
+    padding: 30px;
+    position: relative;
+}
+
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.modal__close:hover {
+    background: #f0f0f0;
+}
+
+.modal__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal__title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.modal__category {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.modal__details {
+    margin-bottom: 25px;
+}
+
+.modal__details p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.modal__button {
+    width: 100%;
+}
+
+/* Индикатор загрузки */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--secondary-text);
+    font-style: italic;
+}
+
+.error-message,
+.no-events {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: #dc3545;
+}
+
+.error-message p,
+.no-events p {
+    font-size: 1.1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .events__controls {
+        gap: 8px;
+    }
+    
+    .filter__button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+    
+    .modal {
+        width: 95%;
+    }
+    
+    .modal__content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter__button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
 }
