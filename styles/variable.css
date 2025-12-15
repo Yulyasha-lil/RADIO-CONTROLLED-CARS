@@ -1,12 +1,28 @@
 :root {
-  --main-font-family: 'Wulkan Display', sans-serif;
-  --main-font-weight: 700;
-  --main-font-color: rgba(0 0 0 / 1);
-  --main-bg-color: rgba(255 255 255 / 1);
-  --card-bg-color: rgba(217 217 217 / 1);
-  --accent-color: rgba(48 60 84 / 1);
-  --color-text-button: rgba(0 0 0 / 1);
-  --main-inline-padding: 40px;
-  --main-gap: 30px;
+    /* Переменные из variable2.css */
+    --main-font-family: 'Wulkan Display', sans-serif;
+    --main-font-weight: 700;
+    --main-font-color: rgba(0 0 0 / 1);
+    --main-bg-color: rgba(255 255 255 / 1);
+    --card-bg-color: rgba(217 217 217 / 1);
+    --accent-color: rgba(48 60 84 / 1);
+    --color-text-button: rgba(0 0 0 / 1);
+    --main-inline-padding: 40px;
+    --main-gap: 30px;
 
+    /* Переменные из исходного variable.css с переопределением для соответствия variable2.css */
+    --text-color: var(--main-font-color); /* #333333 > rgba(0 0 0 / 1) */
+    --secondary-text: rgba(102 102 102 / 1); /* Аналог #666666 в новом формате */
+    --accent-color: var(--accent-color); /* #ff4d4d > rgba(48 60 84 / 1) */
+    --background-color: var(--main-bg-color); /* #ffffff > rgba(255 255 255 / 1) */
+    --card-background: var(--card-bg-color); /* #f8f9fa > rgba(217 217 217 / 1) */
+    --border-color: rgba(224 224 224 / 1); /* Аналог #e0e0e0 в новом формате */
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    /* Дополнительные переменные для совместимости */
+    --font-family: var(--main-font-family);
+    --font-weight-bold: var(--main-font-weight);
+    --button-text-color: var(--color-text-button);
+    --container-padding: var(--main-inline-padding);
+    --grid-gap: var(--main-gap);
 }

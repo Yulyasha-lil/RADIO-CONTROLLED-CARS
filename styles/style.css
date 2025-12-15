@@ -1,4 +1,4 @@
-html {
+﻿html {
   scroll-behavior: smooth;
 }
 
@@ -10,6 +10,7 @@ html {
   min-block-size: 100dvb;
 }
 
+/* ========== HEADER ========== */
 .header {
   position: sticky;
   top: 0;
@@ -52,6 +53,7 @@ html {
   text-shadow: 1px 1px var(--accent-color);
 }
 
+/* ========== MAIN ========== */
 .main {
   display: flex;
   flex-direction: column;
@@ -59,6 +61,7 @@ html {
   padding-block-end: 100px;
 }
 
+/* ========== COVER ========== */
 .cover {
   display: flex;
   justify-content: center;
@@ -89,6 +92,7 @@ html {
   text-shadow: 10px -6px 0 var(--accent-color);
 }
 
+/* ========== ABOUT ========== */
 .about {
   display: flex;
   gap: 50px;
@@ -129,11 +133,42 @@ html {
   max-inline-size: 720px;
 }
 
+/* ========== EVENTS ========== */
 .events {
   display: flex;
   flex-direction: column;
   gap: 70px;
   padding-inline: var(--main-inline-padding);
+}
+
+/* ========== ФИЛЬТРЫ (из style.css) ========== */
+.events__controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.filter__button {
+    padding: 8px 16px;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    color: var(--text-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.filter__button:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+.filter__button.active {
+    background: var(--accent-color);
+    color: white;
 }
 
 .events__card-list {
@@ -156,6 +191,13 @@ html {
   inline-size: 423px;
 }
 
+/* ========== КАРТОЧКИ С КАТЕГОРИЯМИ (из style.css) ========== */
+.card__image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px 40px 0 0;
+}
+
 .card__image {
   border-radius: 40px;
   object-fit: cover;
@@ -167,6 +209,18 @@ html {
   aspect-ratio: 1 / 1;
 }
 
+.card__category {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .event__card-content {
   display: flex;
   flex-direction: column;
@@ -174,18 +228,39 @@ html {
   text-align: justify;
   gap: 15px;
   inline-size: 100%;
-  max-inline-size: 350px; /* Такая же ширина как у изображения */
+  max-inline-size: 350px;
+  padding: 15px;
 }
 
 .event__card-title {
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Количество строк */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: normal; /* Разрешаем перенос строк */
+  white-space: normal;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-weight: 600;
 }
 
+.event__card-date,
+.event__card-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 5px;
+}
+
+.event__card-date svg,
+.event__card-location svg {
+    flex-shrink: 0;
+}
+
+/* ========== КНОПКА ========== */
 .event__button {
   border-radius: 40px;
   padding: 20px 90px;
@@ -214,46 +289,134 @@ html {
   transition: background-color 1s, color 1s;
 }
 
-.popup {
-  border-radius: 40px;
-  padding: var(--main-inline-padding);
-  opacity: 0;
-  overflow: hidden;
-  color: rgba(0 0 0 / 1);
-  line-height: 1;
-  background-color: var(--card-bg-color);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: scale(0.9);
-  max-inline-size: 500px;
+/* ========== МОДАЛЬНОЕ ОКНО (из style.css) ========== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
 }
 
-.popup.modal-open {
-  opacity: 1;
-  transform: scale(1);
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
-.popup[open] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: white;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 
-.popup__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--main-gap);
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
 }
 
-.form {
-  padding-block-start: var(--main-inline-padding);
+.modal__content {
+    padding: 30px;
+    position: relative;
 }
 
-.popup::backdrop {
-  opacity: 0.75;
-  background-color: rgba(0 0 0 / 1);
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s;
 }
 
+.modal__close:hover {
+    background: #f0f0f0;
+}
+
+.modal__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal__title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.modal__category {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.modal__details {
+    margin-bottom: 25px;
+}
+
+.modal__details p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.modal__button {
+    width: 100%;
+}
+
+/* ========== УТИЛИТЫ (из style.css) ========== */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--secondary-text);
+    font-style: italic;
+}
+
+.error-message,
+.no-events {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: #dc3545;
+}
+
+.error-message p,
+.no-events p {
+    font-size: 1.1rem;
+}
+
+/* ========== FOOTER ========== */
 .footer__title {
   padding-inline-start: var(--main-inline-padding);
 }
@@ -294,8 +457,8 @@ html {
   padding: var(--main-inline-padding);
 }
 
+/* ========== MEDIA QUERIES ========== */
 @media (width <= 768px) {
-
   .header__menu-list {
     flex-direction: column;
     gap: 2vw;
@@ -306,7 +469,32 @@ html {
   #about,
   #events,
   #contact {
-    margin-top: -222px; /* компенсируем отступ */
-    padding-top: 222px; /* принудительный отступ */
+    margin-top: -222px;
+    padding-top: 222px;
+  }
+  
+  /* Адаптивность для фильтров и модалки */
+  .events__controls {
+      gap: 8px;
+  }
+  
+  .filter__button {
+      padding: 6px 12px;
+      font-size: 14px;
+  }
+  
+  .modal {
+      width: 95%;
+  }
+  
+  .modal__content {
+      padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter__button {
+      padding: 5px 10px;
+      font-size: 12px;
   }
 }
