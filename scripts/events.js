@@ -206,11 +206,6 @@ class EventsManager {
         document.getElementById('modal-close').addEventListener('click', closeModal);
         document.getElementById('modal-overlay').addEventListener('click', closeModal);
 
-<<<<<<< HEAD
-          Escape
-=======
-        
->>>>>>> 98988c7b30211cf55d80b5d867b06955457c4933
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 const modal = document.getElementById('event-modal');
