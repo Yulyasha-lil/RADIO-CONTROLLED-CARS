@@ -1,3 +1,15 @@
+// Добавить в начало файла events.js
+const isMobile = () => window.innerWidth <= 768;
+
+// Если есть функционал, который нужно адаптировать для мобильных
+document.addEventListener('DOMContentLoaded', function() {
+  // Пример: уменьшаем количество карточек для мобильных
+  if (isMobile()) {
+    console.log('Мобильное устройство обнаружено');
+    // Можно добавить мобильную логику
+  }
+});
+
 class EventsManager {
     constructor() {
         this.events = [];
@@ -27,7 +39,7 @@ class EventsManager {
             this.events = data.events;
             this.filteredEvents = [...this.events];
         } catch (error) {
-            console.error('������ �������� �����������:', error);
+            console.error('Ошибка загрузки мероприятий:', error);
             this.showError();
         } finally {
             this.showLoading(false);
@@ -43,7 +55,7 @@ class EventsManager {
     showError() {
         this.eventsList.innerHTML = `
             <li class="error-message">
-                <p>�� ������� ��������� �����������. ����������, ���������� �����.</p>
+                <p>Не удалось загрузить мероприятия. Пожалуйста, попробуйте позже.</p>
             </li>
         `;
     }
@@ -51,7 +63,7 @@ class EventsManager {
     filterEvents(category) {
         this.currentFilter = category;
         
-        // ��������� �������� ������ �������
+           
         this.filterButtons.forEach(button => {
             if (button.dataset.filter === category) {
                 button.classList.add('active');
@@ -107,7 +119,7 @@ class EventsManager {
                     type="button" 
                     data-action="open-modal"
                     data-event-id="${event.id}"
-                    aria-label="��������� � ����������� ${event.title}">
+                    aria-label="Подробнее о мероприятии ${event.title}">
                     <span>Подробнее</span>
                 </button>
             </li>
@@ -118,7 +130,7 @@ class EventsManager {
         if (this.filteredEvents.length === 0) {
             this.eventsList.innerHTML = `
                 <li class="no-events">
-                    <p>��� ����������� � ��������� ���������.</p>
+                    <p>Нет мероприятий в выбранной категории.</p>
                 </li>
             `;
             return;
@@ -130,7 +142,7 @@ class EventsManager {
         
         this.eventsList.innerHTML = eventsHTML;
         
-        // ��������� ����������� ��� ������ ����� �������
+             
         this.addEventCardListeners();
     }
 
@@ -148,7 +160,7 @@ class EventsManager {
         const event = this.events.find(e => e.id === eventId);
         if (!event) return;
 
-        // ������� ��������� ���� � ��������� ���
+             
         const modal = document.getElementById('event-modal');
         const overlay = document.getElementById('modal-overlay');
         
@@ -160,20 +172,20 @@ class EventsManager {
         document.getElementById('modal-location').textContent = event.location;
         document.getElementById('modal-description').textContent = event.description;
 
-        // ������ �����������
+         
         const registerButton = document.getElementById('modal-register');
         registerButton.onclick = () => {
-            alert(`����������� �� �����������: ${event.title}\n����: ${event.date}\n�� �������� � ���� ��� �������������.`);
+            alert(`Регистрация на мероприятие: ${event.title}\nДата: ${event.date}\nМы свяжемся с вами для подтверждения.`);
         };
 
-        // ���������� ��������� ����
+          
         modal.classList.add('active');
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
 
     setupEventListeners() {
-        // ����������
+        
         this.filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const filter = button.dataset.filter;
@@ -181,7 +193,7 @@ class EventsManager {
             });
         });
 
-        // �������� ���������� ����
+          
         const closeModal = () => {
             const modal = document.getElementById('event-modal');
             const overlay = document.getElementById('modal-overlay');
@@ -194,7 +206,7 @@ class EventsManager {
         document.getElementById('modal-close').addEventListener('click', closeModal);
         document.getElementById('modal-overlay').addEventListener('click', closeModal);
 
-        // �������� �� Escape
+          Escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 const modal = document.getElementById('event-modal');
@@ -206,7 +218,7 @@ class EventsManager {
     }
 }
 
-// ������������� ��� �������� ��������
+   
 document.addEventListener('DOMContentLoaded', () => {
     new EventsManager();
 });

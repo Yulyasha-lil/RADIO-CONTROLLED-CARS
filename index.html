@@ -8,7 +8,6 @@
     <title>RADIO-CONTROLLED CARS</title>
     <meta name="description" content="Агрегатор мероприятий по радиоуправляемым машинкам. Расписание гонок RC cars, соревнования дронов и RC-событий в Санкт-Петербурге.">
     
-    <!-- Обновлены пути к стилям как в index2.html -->
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variable.css" />
     <link rel="stylesheet" href="./styles/global.css" />
@@ -72,7 +71,7 @@
       <section class="events" id="events">
         <h2 class="title">Мероприятия</h2>
         
-        <!-- Добавлены кнопки фильтрации как в оригинальном index.html -->
+        <!-- Добавлены кнопки фильтрации -->
         <div class="events__controls">
           <button class="filter__button active" data-filter="all">Все</button>
           <button class="filter__button" data-filter="Трековые гонки">Трековые</button>
@@ -81,7 +80,7 @@
           <button class="filter__button" data-filter="Спидран">Спидран</button>
         </div>
         
-        <!-- Структура списка мероприятий как в index2.html, но с динамической загрузкой -->
+        <!-- Структура списка мероприятий с динамической загрузкой -->
         <ul class="events__card-list" id="events-list">
           <!-- Динамически загружаемые карточки из events.js -->
         </ul>
@@ -93,10 +92,10 @@
       <div class="contacts__info">
         <h3 class="contacts__subtitle">Контакты</h3>
         <address class="contacts__address">
-          <!-- Обновлены контакты как в index2.html -->
+          <!-- Обновлены контакты -->
           <span>г. Санкт-Петербург</span>
           <span><a href="mailto:info@mail.ru">E-mail: info@mail.ru</a></span>
-          <!-- Телефон удален как в index2.html -->
+          <!-- Телефон удален -->
         </address>
       </div>
       <div class="footer__copyright">
@@ -104,7 +103,7 @@
       </div>
     </footer>
     
-    <!-- Модальное окно из оригинального index.html (остается для функциональности) -->
+    <!-- Модальное окно -->
     <div class="modal-overlay" id="modal-overlay"></div>
     <div class="modal" id="event-modal">
       <div class="modal__content">
@@ -115,14 +114,15 @@
         <div class="modal__details">
           <p><strong>Дата и время:</strong> <span id="modal-date"></span></p>
           <p><strong>Место проведения:</strong> <span id="modal-location"></span></p>
-          <p id="modal-description"></p>
+          <p><strong>Мероприятие:</strong> <span id="modal-description"></span></p>
         </div>
         <button class="event__button modal__button" id="modal-register">Зарегистрироваться</button>
       </div>
     </div>
 
-    <!-- Скрипты из оригинального index.html (сохраняем функциональность) -->
+    <!-- Скрипты -->
     <script src="./scripts/events.js" charset="UTF-8" defer></script>
     <script src="./scripts/modal.js" defer></script>
+    <script src="./scripts/cover.js" defer></script>
   </body>
 </html>
