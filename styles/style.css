@@ -499,6 +499,7 @@
   .filter__button {
     padding: 5px 10px;
     font-size: 12px;
+<<<<<<< HEAD
   }
 
 }
@@ -892,5 +893,8 @@
   #contact {
     margin-block-start: -100px;
     padding-block-start: 100px;
+=======
+>>>>>>> 98988c7b30211cf55d80b5d867b06955457c4933
   }
+
 }
