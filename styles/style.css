@@ -10,7 +10,7 @@
   min-block-size: 100dvb;
 }
 
-/* ========== HEADER ========== */
+/* HEADER */
 .header {
   position: sticky;
   top: 0;
@@ -53,7 +53,7 @@
   text-shadow: 1px 1px var(--accent-color);
 }
 
-/* ========== MAIN ========== */
+/* MAIN */
 .main {
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@
   padding-block-end: 100px;
 }
 
-/* ========== COVER ========== */
+/* COVER */
 .cover {
   display: flex;
   justify-content: center;
@@ -85,14 +85,14 @@
 
 .aligned-text {
   color: rgba(255 255 255 / 1);
-  font-weight: var(--main-font-weight);
+  font-weight: var(--font-weight-bold);
   font-size: 90px;
   line-height: 1;
   text-align: center;
   text-shadow: 10px -6px 0 var(--accent-color);
 }
 
-/* ========== ABOUT ========== */
+/* ABOUT */
 .about {
   display: flex;
   gap: 50px;
@@ -108,7 +108,7 @@
 
 .title {
   color: var(--main-font-color);
-  font-weight: var(--main-font-weight);
+  font-weight: var(--font-weight-bold);
   font-size: clamp(70px, 47.14px + 2.98vw, 90px);
   line-height: 1;
 }
@@ -118,7 +118,7 @@
   flex-direction: column;
   gap: var(--main-gap);
   color: var(--main-font-color);
-  font-weight: var(--main-font-weight);
+  font-weight: var(--font-weight-bold);
   font-size: clamp(21px, 14.86px + 1.19vw, 32px);
   line-height: 1;
 }
@@ -133,7 +133,8 @@
   max-inline-size: 720px;
 }
 
-/* ========== EVENTS ========== */
+/* EVENTS */
+
 .events {
   display: flex;
   flex-direction: column;
@@ -141,34 +142,33 @@
   padding-inline: var(--main-inline-padding);
 }
 
-/* ========== ФИЛЬТРЫ (из style.css) ========== */
 .events__controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 30px 0;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+  flex-wrap: wrap;
 }
 
 .filter__button {
-    padding: 8px 16px;
-    border: 2px solid var(--accent-color);
-    background: transparent;
-    color: var(--text-color);
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: inherit;
+  padding: 8px 16px;
+  border: 2px solid var(--accent-color);
+  background-color: transparent;
+  color: var(--main-font-color);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
 }
 
 .filter__button:hover {
-    background: var(--accent-color);
-    color: white;
+  background-color: var(--accent-color);
+  color: white;
 }
 
 .filter__button.active {
-    background: var(--accent-color);
-    color: white;
+  background-color: var(--accent-color);
+  color: white;
 }
 
 .events__card-list {
@@ -191,11 +191,11 @@
   inline-size: 423px;
 }
 
-/* ========== КАРТОЧКИ С КАТЕГОРИЯМИ (из style.css) ========== */
+/*  КАРТОЧКИ С КАТЕГОРИЯМИ */
 .card__image-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 40px 40px 0 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px 40px 0 0;
 }
 
 .card__image {
@@ -210,22 +210,22 @@
 }
 
 .card__category {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: var(--accent-color);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .event__card-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: justify;
+  align-items: flex-start;
   gap: 15px;
   inline-size: 100%;
   max-inline-size: 350px;
@@ -239,39 +239,40 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
-  font-size: 1.1rem;
+  font-size: 1.7rem;
   margin-bottom: 10px;
-  color: var(--text-color);
+  color: var(--main-font-color);
   font-weight: 600;
 }
 
 .event__card-date,
 .event__card-location {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    color: var(--secondary-text);
-    margin-bottom: 5px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 1.4rem;
+  color: var(--secondary-text);
+  margin-block-end: 5px;
 }
 
 .event__card-date svg,
 .event__card-location svg {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
-/* ========== КНОПКА ========== */
+/* КНОПКА */
 .event__button {
   border-radius: 40px;
-  padding: 20px 90px;
   overflow: hidden;
   color: rgba(255 255 255 / 1);
-  font-weight: var(--main-font-weight);
+  font-weight: var(--font-weight-bold);
   font-size: 32px;
   line-height: 1;
   background-color: var(--accent-color);
   cursor: pointer;
   border: 4px solid transparent;
+  inline-size: 350px;
+  block-size: 80px;
 }
 
 .event__button:focus {
@@ -279,7 +280,7 @@
 }
 
 .event__button:focus-visible {
-  border: 4px solid rgba(255 255 255 / 1);
+  border: 4px solid var(--border-color);
 }
 
 .event__button:hover {
@@ -289,155 +290,155 @@
   transition: background-color 1s, color 1s;
 }
 
-/* ========== МОДАЛЬНОЕ ОКНО (из style.css) ========== */
+/* МОДАЛЬНОЕ ОКНО */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 
 .modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
-    background: white;
-    border-radius: 12px;
-    max-width: 500px;
-    width: 90%;
-    max-height: 90vh;
-    overflow-y: auto;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background-color: white;
+  border-radius: 12px;
+  max-inline-size: 500px;
+  width: 90%;
+  max-block-size: 90vh;
+  overflow-y: auto;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
 .modal.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .modal__content {
-    padding: 30px;
-    position: relative;
+  padding: 30px;
+  position: relative;
 }
 
 .modal__close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--text-color);
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background 0.3s;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--main-font-color);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s;
 }
 
 .modal__close:hover {
-    background: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .modal__image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 20px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 .modal__title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--text-color);
+  font-size: 1.5rem;
+  margin-block-end: 10px;
+  color: var(--main-font-color);
 }
 
 .modal__category {
-    display: inline-block;
-    background: var(--accent-color);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-block-end: 20px;
 }
 
 .modal__details {
-    margin-bottom: 25px;
+  margin-block-end: 25px;
 }
 
 .modal__details p {
-    margin-bottom: 10px;
-    line-height: 1.5;
+  margin-block-end: 10px;
+  line-height: 1.5;
 }
 
 .modal__button {
-    width: 100%;
+  inline-size: 100%;
 }
 
-/* ========== УТИЛИТЫ (из style.css) ========== */
+/* УТИЛИТЫ */
 .loading {
-    text-align: center;
-    padding: 40px;
-    color: var(--secondary-text);
-    font-style: italic;
+  text-align: center;
+  padding: 40px;
+  color: var(--secondary-text);
+  font-style: italic;
 }
 
 .error-message,
 .no-events {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 40px;
-    color: #dc3545;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: #dc3545;
 }
 
 .error-message p,
 .no-events p {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
-/* ========== FOOTER ========== */
+/* FOOTER */
 .footer__title {
   padding-inline-start: var(--main-inline-padding);
 }
 
 .contacts__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    gap: var(--main-gap);
-    height: 70vh;
-    padding-inline-end: clamp(100px, -14.29px + 14.88vw, 200px);
-    background-image: url(../svg/contacts_line.svg), url(../svg/contacts_car.svg);
-    background-repeat: no-repeat;
-    background-position: center center, 90px center;
-    background-size: 100vw, clamp(300px, 71.43px + 29.76vw, 500px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--main-gap);
+  height: 70vh;
+  padding-inline-end: clamp(100px, -14.29px + 14.88vw, 200px);
+  background-image: url(../svg/contacts_line.svg), url(../svg/contacts_car.svg);
+  background-repeat: no-repeat;
+  background-position: center center, 90px center;
+  background-size: 100vw, clamp(300px, 71.43px + 29.76vw, 500px);
 }
 
 .contacts__subtitle {
   color: var(--main-font-color);
-  font-weight: var(--main-font-weight);
+  font-weight: var(--font-weight-bold);
   font-size: clamp(36px, 22.29px + 1.79vw, 48px);
   line-height: 1;
 }
@@ -447,7 +448,7 @@
   flex-direction: column;
   gap: 15px;
   color: var(--main-font-color);
-  font-weight: var(--main-font-weight);
+  font-weight: var(--font-weight-bold);
   font-size: clamp(24px, 10.29px + 1.79vw, 36px);
   font-style: normal;
   line-height: 1;
@@ -457,8 +458,9 @@
   padding: var(--main-inline-padding);
 }
 
-/* ========== MEDIA QUERIES ========== */
+/*  MEDIA QUERIES  */
 @media (width <= 768px) {
+
   .header__menu-list {
     flex-direction: column;
     gap: 2vw;
@@ -469,32 +471,33 @@
   #about,
   #events,
   #contact {
-    margin-top: -222px;
-    padding-top: 222px;
+    margin-block-start: -222px;
+    padding-block-start: 222px;
   }
   
   /* Адаптивность для фильтров и модалки */
   .events__controls {
-      gap: 8px;
+    gap: 8px;
   }
   
   .filter__button {
-      padding: 6px 12px;
-      font-size: 14px;
+    padding: 6px 12px;
+    font-size: 14px;
   }
   
   .modal {
-      width: 95%;
+    inline-size: 95%;
   }
   
   .modal__content {
-      padding: 20px;
+    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .filter__button {
-      padding: 5px 10px;
-      font-size: 12px;
+    padding: 5px 10px;
+    font-size: 12px;
   }
+
 }
