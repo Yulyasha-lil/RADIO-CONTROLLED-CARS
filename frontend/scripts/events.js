@@ -173,9 +173,22 @@ class EventsManager {
         document.getElementById('modal-description').textContent = event.description;
 
          
-        const registerButton = document.getElementById('modal-register');
-        registerButton.onclick = () => {
-            alert(`Регистрация на мероприятие: ${event.title}\nДата: ${event.date}\nМы свяжемся с вами для подтверждения.`);
+        const registerButton = document.getElementById('modal-register');      
+        registerButton.onclick = async () => {
+            const name = prompt('Введите имя');
+            const email = prompt('Введите email');
+
+            await fetch('/api/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                name,
+                email,
+                event_id: event.id
+                })
+            });
+
+            alert('Вы успешно зарегистрированы!');
         };
 
           
@@ -206,6 +219,7 @@ class EventsManager {
         document.getElementById('modal-close').addEventListener('click', closeModal);
         document.getElementById('modal-overlay').addEventListener('click', closeModal);
 
+          Escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 const modal = document.getElementById('event-modal');
